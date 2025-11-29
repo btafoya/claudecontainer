@@ -26,7 +26,8 @@ RUN npx claude-code-templates@latest \
     --mcp "integration/memory-integration" \
     --yes
 
-# Copy container operations skill
+# Copy Claude Code configuration and skills
+COPY .claude/settings.json /app/.claude/settings.json
 COPY .claude/skills/container-operations.md /app/.claude/skills/container-operations.md
 
 # Install SuperClaude Framework via pipx and make it globally accessible

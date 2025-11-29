@@ -86,6 +86,7 @@ docker run --rm -it -v $(pwd):/app claudecontainer:latest sh
 - **31 SuperClaude Commands** in `/app/.claude/commands/sc/` 🆕
 - **Container Operations Skill** in `/app/.claude/skills/`
 - **SuperClaude Framework** at `/usr/local/bin/superclaude`
+- **Claude Code Settings** in `/app/.claude/settings.json` (Git attribution disabled)
 
 ## SuperClaude Usage
 
@@ -149,6 +150,7 @@ code .
 ✅ 16 Claude Code components (agents, commands, settings)
 ✅ SuperClaude Framework 4.1.9
 ✅ Container operations skill (361 lines)
+✅ Git attribution disabled (clean commits) 🆕
 ✅ Fixed uv/uvx installation
 ✅ Proper directory permissions
 ✅ Non-root execution (security)
