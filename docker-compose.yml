@@ -1,0 +1,48 @@
+version: '2'
+
+services:
+  claudecontainer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: claudecontainer:latest
+    container_name: claudecontainer
+
+    # Volume mounts for persistent data
+    volumes:
+      # Mount current directory to /app for development
+      - .:/app
+      # Mount output directory for build artifacts
+      - ./output:/output
+      # Optional: Mount git config for commits
+      # - ~/.gitconfig:/home/sandboxuser/.gitconfig:ro
+
+    # Environment variables
+    environment:
+      - NODE_ENV=production
+      - HOME=/home/sandboxuser
+
+    # Working directory
+    working_dir: /app
+
+    # Keep container running for interactive use
+    stdin_open: true
+    tty: true
+
+    # Default command (can be overridden)
+    command: sh
+
+    # Resource limits (optional)
+    # mem_limit: 2g
+    # cpus: 2
+
+    # Network configuration
+    network_mode: bridge
+
+    # Restart policy
+    restart: unless-stopped
+
+# Optional: Define named volumes for better control
+# volumes:
+#   app_data:
+#   output_data:
