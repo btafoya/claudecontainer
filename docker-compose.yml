@@ -1,5 +1,3 @@
-version: '2'
-
 services:
   claudecontainer:
     build:
@@ -30,7 +28,7 @@ services:
     tty: true
 
     # Default command (can be overridden)
-    command: sh
+    command: bash
 
     # Resource limits (optional)
     # mem_limit: 2g
